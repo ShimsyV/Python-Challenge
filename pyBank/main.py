@@ -36,10 +36,16 @@ with open(csvpath, 'r') as csvfile:
     #total_months += 1
     #net_amount += int(row[1])
     
+    # Read each Row of data 
     for row in csvreader:
 
-    # Read each row of data and calculate the total months, net amount
+    # Calculate the total months
         total_months += 1
+    # Calculate the net amount
+        net_amount += int(row[1])
+
 
     print(f'Total Months: {total_months}')
+    print(f'Total: ${net_amount}')
+    
 
