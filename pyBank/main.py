@@ -66,9 +66,25 @@ with open(csvpath, 'r') as csvfile:
     # Calculate the average change between months
     average_monthly_change = sum(total_monthly_change) / len(total_monthly_change)
 
+print(f'Financial Analysis')
+print(f'-------------------------------------------------------')
 print(f'Total Months: {total_months}')
 print(f'Total: ${net_amount}')
 print(f'Average Change: $ {average_monthly_change:.2f}')
 print(f'Greatest Increase in Profits: {greatest_increase_month} (${max(total_monthly_change)}) ')
 print(f'Greatest Decrease in Loss: {greastest_decrease_month} (${min(total_monthly_change)}) ')
 
+# Specify the file to write to
+output_path = os.path.join('.', 'analysis', 'analysis.txt')
+
+# Open file and write
+with open(output_path, 'w') as analysis_file:
+
+    # Write the report
+    analysis_file.write(f'Financial Analysis\n')
+    analysis_file.write(f'-------------------------------------------------------\n')
+    analysis_file.write(f'Total Months: {total_months}')
+    analysis_file.write(f'Total: ${net_amount}')
+    analysis_file.write(f'Average Change: $ {average_monthly_change:.2f}')
+    analysis_file.write(f'Greatest Increase in Profits: {greatest_increase_month} (${max(total_monthly_change)})')
+    analysis_file.write(f'Greatest Decrease in Loss: {greastest_decrease_month} (${min(total_monthly_change)})')
