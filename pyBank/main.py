@@ -53,13 +53,22 @@ with open(csvpath, 'r') as csvfile:
         previous_profit_loss = int(row[1])
         month_count.append(row[0])
 
-   
+    # Calculate the greatest increase profit
+        if int(row[1]) > greatest_increase:
+            greatest_increase = int(row[1])
+            greatest_increase_month = row[0]
+
+    # Calculate the greatest decrease loss
+        if int(row[1]) < greatest_decrease:
+            greatest_decrease = int(row[1])
+            greastest_decrease_month = row[0]    
+
     # Calculate the average change between months
     average_monthly_change = sum(total_monthly_change) / len(total_monthly_change)
 
 print(f'Total Months: {total_months}')
 print(f'Total: ${net_amount}')
 print(f'Average Change: $ {average_monthly_change:.2f}')
-
-
+print(f'Greatest Increase in Profits: {greatest_increase_month} (${max(total_monthly_change)}) ')
+print(f'Greatest Decrease in Loss: {greastest_decrease_month} (${min(total_monthly_change)}) ')
 
