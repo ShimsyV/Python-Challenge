@@ -83,8 +83,8 @@ with open(output_path, 'w') as analysis_file:
     # Write the report
     analysis_file.write(f'Financial Analysis\n')
     analysis_file.write(f'-------------------------------------------------------\n')
-    analysis_file.write(f'Total Months: {total_months}')
-    analysis_file.write(f'Total: ${net_amount}')
-    analysis_file.write(f'Average Change: $ {average_monthly_change:.2f}')
-    analysis_file.write(f'Greatest Increase in Profits: {greatest_increase_month} (${max(total_monthly_change)})')
-    analysis_file.write(f'Greatest Decrease in Loss: {greastest_decrease_month} (${min(total_monthly_change)})')
+    analysis_file.write(f'Total Months: {total_months}\n')
+    analysis_file.write(f'Total: ${net_amount}\n')
+    analysis_file.write(f'Average Change: $ {average_monthly_change:.2f}\n')
+    analysis_file.write(f'Greatest Increase in Profits: {greatest_increase_month} (${max(total_monthly_change)})\n')
+    analysis_file.write(f'Greatest Decrease in Loss: {greastest_decrease_month} (${min(total_monthly_change)})\n')
