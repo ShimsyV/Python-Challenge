@@ -15,6 +15,11 @@ khan_votes = 0
 correy_votes = 0
 li_votes = 0
 otooley_votes = 0
+khan_percent = 0
+correy_percent = 0
+li_percent = 0
+otooley_percent = 0
+
 
 # Improved Reading using CSV module
 
@@ -41,11 +46,17 @@ with open(csvpath, 'r') as csvfile:
             li_votes += 1
         else:
             otooley_votes += 1
+
+        # Calculate the percentage of votes of each candidate 
+        khan_percent = (khan_votes/total_votes)*100
+        correy_percent = (correy_votes/total_votes)*100
+        li_percent = (li_votes/total_votes)*100
+        otooley_percent = (otooley_votes/total_votes)*100
+        
     
     # Print Results
     print(f"Total_Votes: {total_votes}")
-    print(f"Khan: ({khan_votes})")
-    print(f"Correy: ({correy_votes})")
-    print(f"Li: ({li_votes})")
-    print(f"O'Tooley: ({otooley_votes})")
-    
+    print(f"Khan: {round(khan_percent,3)}% ({khan_votes})")
+    print(f"Correy: {round(correy_percent,3)}% ({correy_votes})")
+    print(f"Li: {round(li_percent, 3)}% ({li_votes})")
+    print(f"O'Tooley: {round(otooley_percent,3)}% ({otooley_votes})")
