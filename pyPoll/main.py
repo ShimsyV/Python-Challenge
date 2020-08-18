@@ -31,6 +31,21 @@ with open(csvpath, 'r') as csvfile:
 
         # Calculate total number of votes casted
         total_votes += 1
+
+        # Calculate the total number of votes each candidate received
+        if (row[2] == "Khan"):
+            khan_votes += 1
+        elif (row[2] == "Correy"):
+            correy_votes += 1
+        elif (row[2] == "Li"):
+            li_votes += 1
+        else:
+            otooley_votes += 1
     
     # Print Results
     print(f"Total_Votes: {total_votes}")
+    print(f"Khan: ({khan_votes})")
+    print(f"Correy: ({correy_votes})")
+    print(f"Li: ({li_votes})")
+    print(f"O'Tooley: ({otooley_votes})")
+    
