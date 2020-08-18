@@ -52,11 +52,25 @@ with open(csvpath, 'r') as csvfile:
         correy_percent = (correy_votes/total_votes)*100
         li_percent = (li_votes/total_votes)*100
         otooley_percent = (otooley_votes/total_votes)*100
+
+        # Find winner of the election based on popular vote
+        winner = max(khan_votes, correy_votes, li_votes, otooley_votes)
+
+        if winner == khan_votes:
+            winner_name = "Khan"
+        elif winner == correy_votes:
+            winner_name = "Correy"
+        elif winner == li_votes:
+            winner_name = "Li"
+        else:
+            winner_name = "O'Tooley"
         
     
     # Print Results
     print(f"Total_Votes: {total_votes}")
-    print(f"Khan: {round(khan_percent,3)}% ({khan_votes})")
-    print(f"Correy: {round(correy_percent,3)}% ({correy_votes})")
+    print(f"Khan: {round(khan_percent, 3)}% ({khan_votes})")
+    print(f"Correy: {round(correy_percent, 3)}% ({correy_votes})")
     print(f"Li: {round(li_percent, 3)}% ({li_votes})")
-    print(f"O'Tooley: {round(otooley_percent,3)}% ({otooley_votes})")
+    print(f"O'Tooley: {round(otooley_percent, 3)}% ({otooley_votes})")
+    print(f"Winner: {winner_name}")
+
