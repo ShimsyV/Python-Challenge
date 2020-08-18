@@ -67,10 +67,34 @@ with open(csvpath, 'r') as csvfile:
         
     
     # Print Results
+    print(f"Election Results")
+    print(f"------------------------------")
     print(f"Total_Votes: {total_votes}")
+    print(f"------------------------------")
     print(f"Khan: {round(khan_percent, 3)}% ({khan_votes})")
     print(f"Correy: {round(correy_percent, 3)}% ({correy_votes})")
     print(f"Li: {round(li_percent, 3)}% ({li_votes})")
     print(f"O'Tooley: {round(otooley_percent, 3)}% ({otooley_votes})")
+    print(f"------------------------------")
     print(f"Winner: {winner_name}")
+    print(f"------------------------------")
 
+# Specify the file to write to
+output_path = os.path.join('.', 'analysis', 'analysis.txt')
+
+# Open file and write
+with open(output_path, 'w') as analysis_file:
+
+    # Write the report
+    analysis_file.write(f"Election Results\n")
+    analysis_file.write(f"------------------------------\n")
+    analysis_file.write(f"Total_Votes: {total_votes}\n")
+    analysis_file.write(f"------------------------------\n")
+    analysis_file.write(f"Khan: {round(khan_percent, 3)}% ({khan_votes})\n")
+    analysis_file.write(f"Correy: {round(correy_percent, 3)}% ({correy_votes})\n")
+    analysis_file.write(f"Li: {round(li_percent, 3)}% ({li_votes})\n")
+    analysis_file.write(f"O'Tooley: {round(otooley_percent, 3)}% ({otooley_votes})\n")
+    analysis_file.write(f"------------------------------\n")
+    analysis_file.write(f"Winner: {winner_name}\n")
+    analysis_file.write(f"------------------------------\n")
+    
